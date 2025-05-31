@@ -8,10 +8,12 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector2 moveInput;
     private Rigidbody2D myRigidbody;
+    CircleCollider2D myCollider;
 
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
+        myCollider = GetComponent<CircleCollider2D>();
     }
 
     void Update()
@@ -31,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnJump(InputValue value)
     {
-        if(/*collider doesnt touch gound. use IsTouchingLayers(LayerMas.GetMask("Ground"))*/)
+        if(!myCollider.IsTouchingLayers(LayerMask.GetMask("Platform")))
         {
             return; //to prevent infinit jump
         }
