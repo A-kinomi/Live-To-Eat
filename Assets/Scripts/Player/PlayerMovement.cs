@@ -10,10 +10,14 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D myRigidbody;
     CircleCollider2D myCollider;
 
+    DrawIn drawInScript;
+    public bool isDrawingIn = false;
+
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
         myCollider = GetComponent<CircleCollider2D>();
+        drawInScript = GetComponentInChildren<DrawIn>();
     }
 
     void Update()
@@ -28,6 +32,10 @@ public class PlayerMovement : MonoBehaviour
 
     void MoveHorizontal()
     {
+        if (isDrawingIn)
+        {
+            return; //player doesn't move while drawing in.
+        }
         myRigidbody.linearVelocity = new Vector2(moveInput.x * runSpeed, myRigidbody.linearVelocity.y);
     }
 
@@ -37,10 +45,24 @@ public class PlayerMovement : MonoBehaviour
         {
             return; //to prevent infinit jump
         }
+        if (isDrawingIn)
+        {
+            return; //player doesn't jump while drawing in.
+        }
 
-        if(value.isPressed)
+        if (value.isPressed)
         {
             myRigidbody.linearVelocity += new Vector2(0f, jumpSpeed);
         }
+    }
+
+    void OnDrawIn(InputValue value)
+    {
+        isDrawingIn = true;
+    }
+
+    void OnDrawInStop (InputValue value)
+    {
+        isDrawingIn = false;
     }
 }
