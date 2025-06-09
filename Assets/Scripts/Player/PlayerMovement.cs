@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector2 moveInput;
     private Rigidbody2D myRigidbody;
-    CircleCollider2D myCollider;
+    CapsuleCollider2D myCollider;
 
     DrawIn drawInScript;
     public bool isDrawingIn = false;
@@ -16,13 +16,14 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
-        myCollider = GetComponent<CircleCollider2D>();
+        myCollider = GetComponent<CapsuleCollider2D>();
         drawInScript = GetComponentInChildren<DrawIn>();
     }
 
     void Update()
     {
         MoveHorizontal();
+        FlipSprit();
     }
 
     void OnMove(InputValue value)
@@ -37,6 +38,16 @@ public class PlayerMovement : MonoBehaviour
             return; //player doesn't move while drawing in.
         }
         myRigidbody.linearVelocity = new Vector2(moveInput.x * runSpeed, myRigidbody.linearVelocity.y);
+    }
+
+    void FlipSprit()
+    {
+        bool hasHolizontalSpeed = Mathf.Abs(myRigidbody.linearVelocity.x) > Mathf.Epsilon;
+
+        if (hasHolizontalSpeed)
+        {
+            transform.localScale = new Vector2(Mathf.Sign(myRigidbody.linearVelocity.x), 1f);
+        }
     }
 
     void OnJump(InputValue value)
