@@ -6,8 +6,7 @@ public class FoodDrawnIn : MonoBehaviour
     [SerializeField] GameObject player;
     float foodSpeed = 0.8f;
 
-    [SerializeField] CircleCollider2D edibleCollider;
-    [SerializeField] CircleCollider2D foodCoreCollider;
+    CircleCollider2D foodCoreCollider;
     PlayerMovement playerMovementScript;
     DrawIn drawInScript;
 
