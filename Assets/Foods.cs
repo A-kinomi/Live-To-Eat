@@ -4,6 +4,6 @@ using UnityEngine;
 public class Foods : ScriptableObject
 {
     public string foodName;
-    public int calorie;
+    public float calorie;
     public Sprite foodImage;
 }

@@ -1032,7 +1032,7 @@ Transform:
   m_GameObject: {fileID: 726132058}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.4661267, y: -0.91522014, z: -0.042529427}
+  m_LocalPosition: {x: 3.4661267, y: -1.01, z: -0.042529427}
   m_LocalScale: {x: 4.728204, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1284,6 +1284,7 @@ MonoBehaviour:
   runSpeed: 10
   jumpSpeed: 18
   isDrawingIn: 0
+  energyBar: {fileID: 639133687}
 --- !u!114 &1273089245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2001,7 +2002,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5657484138937340494, guid: 701a9cec6204b44aea01acbfa8c2d215, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.07413161
+      value: -0.020648241
       objectReference: {fileID: 0}
     - target: {fileID: 5657484138937340494, guid: 701a9cec6204b44aea01acbfa8c2d215, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2038,7 +2039,7 @@ PrefabInstance:
     - target: {fileID: 8838302054747359881, guid: 701a9cec6204b44aea01acbfa8c2d215, type: 3}
       propertyPath: foods
       value: 
-      objectReference: {fileID: 11400000, guid: c68585a1f926c410192c0c678c601ffa, type: 2}
+      objectReference: {fileID: 11400000, guid: 16a125a41d5654c84b1c0ec24ae71337, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

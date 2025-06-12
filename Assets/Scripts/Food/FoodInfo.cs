@@ -5,7 +5,7 @@ using TMPro;
 public class FoodInfo : MonoBehaviour
 {
     public Foods foods;
-    public int calorie;
+    public float calorie;
 
     TextMeshProUGUI calorieText;
     SpriteRenderer foodImage;

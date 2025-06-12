@@ -13,22 +13,31 @@ public class PlayerMovement : MonoBehaviour
     DrawIn drawInScript;
     public bool isDrawingIn = false;
 
+    [SerializeField] GameObject energyBar;
+    EnergyBar energyBarscript;
+
+    bool isMoving = false;
+    [SerializeField] float calConsume = 0.005f;
+
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
         myCollider = GetComponent<CapsuleCollider2D>();
         drawInScript = GetComponentInChildren<DrawIn>();
+        energyBarscript = energyBar.GetComponent<EnergyBar>();
     }
 
     void Update()
     {
         MoveHorizontal();
         FlipSprit();
+        UseEnergyToMove();
     }
 
     void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
+        isMoving = true;
     }
 
     void MoveHorizontal()
@@ -37,7 +46,26 @@ public class PlayerMovement : MonoBehaviour
         {
             return; //player doesn't move while drawing in.
         }
+
+        if (!myCollider.IsTouchingLayers(LayerMask.GetMask("Platform")))
+        {
+            return; //to prevent turning/moving in the air
+        }
+
         myRigidbody.linearVelocity = new Vector2(moveInput.x * runSpeed, myRigidbody.linearVelocity.y);
+    }
+
+    void OnStopMoving()
+    {
+        isMoving = false;
+    }
+
+    void UseEnergyToMove()
+    {
+        if(isMoving)
+        {
+            energyBarscript.ConsumeEnergy(calConsume); //reduce energy when moving around
+        }
     }
 
     void FlipSprit()
@@ -56,10 +84,10 @@ public class PlayerMovement : MonoBehaviour
         {
             return; //to prevent infinit jump
         }
-        if (isDrawingIn)
+        /*if (isDrawingIn)
         {
             return; //player doesn't jump while drawing in.
-        }
+        }*/
 
         if (value.isPressed)
         {

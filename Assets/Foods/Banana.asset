@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodName: Banana
   calorie: 55
-  foodImage: {fileID: 0}
+  foodImage: {fileID: 7381965769198725172, guid: 247974f2184c34e638b37bed6224132e, type: 3}

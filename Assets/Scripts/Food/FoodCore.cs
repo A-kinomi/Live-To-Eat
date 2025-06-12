@@ -9,7 +9,7 @@ public class FoodCore : MonoBehaviour
     EnergyBar energyBarScript;
 
     FoodInfo foodInfoscript;
-    int foodCalorie;
+    float foodCalorie;
 
     void Start()
     {
