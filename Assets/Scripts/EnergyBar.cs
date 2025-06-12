@@ -5,17 +5,23 @@ using TMPro;
 public class EnergyBar : MonoBehaviour
 {
     float maxEnergy = 2000f; //change this later
-    float currentEnergy;
+    public float initialEnergy = 800f;
+    public float currentEnergy;
+    public float underwight;
+    public float overwight;
 
     Slider energySlider;
     [SerializeField] TextMeshProUGUI calorieNumberText;
 
-    void Start()
+    private void Start()
     {
         energySlider = GetComponent<Slider>();
         energySlider.maxValue = maxEnergy;
-        currentEnergy = 800; // change this later
+        currentEnergy = initialEnergy;
         EnergyBarChange();
+
+        underwight = maxEnergy * 0.25f;
+        overwight = maxEnergy * 0.7f;
     }
 
     void EnergyBarChange()

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9155006149648874877}
   - component: {fileID: 1633180571298447273}
   - component: {fileID: 659320329756363156}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Cal(Text)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 3785159808039273020}
   - component: {fileID: 3937765502795570595}
   - component: {fileID: 8838302054747359881}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Food
   m_TagString: Foods
   m_Icon: {fileID: 0}
@@ -264,8 +264,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.032382406, y: 0.01627922}
-  m_Radius: 3.8996644
+  m_Offset: {x: 0.011642456, y: 0.01627922}
+  m_Radius: 2.5642524
 --- !u!61 &2316355996827254961
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -378,7 +378,7 @@ GameObject:
   - component: {fileID: 1440868402559785849}
   - component: {fileID: 2086690358784399916}
   - component: {fileID: 3708724624378609312}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: CalorieText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -514,7 +514,7 @@ GameObject:
   - component: {fileID: 2966063118725874463}
   - component: {fileID: 7951651197291815518}
   - component: {fileID: 376834494109069498}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FoodCore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -597,7 +597,7 @@ GameObject:
   - component: {fileID: 1270578705301004821}
   - component: {fileID: 3587536831917249956}
   - component: {fileID: 3794754738734155038}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}

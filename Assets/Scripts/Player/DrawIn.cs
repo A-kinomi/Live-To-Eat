@@ -10,7 +10,6 @@ public class DrawIn : MonoBehaviour
         if(collision.tag == "Foods")
         {
             isFoodNearBy = true;
-            //print("found food");
         }
     }
 
@@ -19,7 +18,6 @@ public class DrawIn : MonoBehaviour
         if(collision.tag == "Foods")
         {
             isFoodNearBy = false;
-            //print("food is far");
         }
     }
 }

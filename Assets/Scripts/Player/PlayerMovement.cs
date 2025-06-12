@@ -3,12 +3,12 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] float runSpeed = 5f;
-    [SerializeField] float jumpSpeed = 5f;
+    public float runSpeed;
+    public float jumpSpeed;
 
     private Vector2 moveInput;
     private Rigidbody2D myRigidbody;
-    CapsuleCollider2D myCollider;
+    BoxCollider2D myCollider;
 
     DrawIn drawInScript;
     public bool isDrawingIn = false;
@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
-        myCollider = GetComponent<CapsuleCollider2D>();
+        myCollider = GetComponent<BoxCollider2D>();
         drawInScript = GetComponentInChildren<DrawIn>();
         energyBarscript = energyBar.GetComponent<EnergyBar>();
     }

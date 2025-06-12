@@ -4,6 +4,7 @@ using UnityEngine;
 public class FoodDrawnIn : MonoBehaviour
 {
     [SerializeField] GameObject player;
+    GameObject catMouth;
     float foodSpeed = 0.8f;
 
     CircleCollider2D foodCoreCollider;
@@ -21,7 +22,8 @@ public class FoodDrawnIn : MonoBehaviour
 
     void FoodApproachesPlayer()
     {
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, foodSpeed * Time.deltaTime);
+        catMouth = GameObject.FindWithTag("CatMouth");
+        transform.position = Vector2.MoveTowards(transform.position, catMouth.transform.position, foodSpeed * Time.deltaTime);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
