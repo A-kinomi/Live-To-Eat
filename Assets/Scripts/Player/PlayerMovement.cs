@@ -47,10 +47,10 @@ public class PlayerMovement : MonoBehaviour
             return; //player doesn't move while drawing in.
         }
 
-        if (!myCollider.IsTouchingLayers(LayerMask.GetMask("Platform")))
+        /*if (!myCollider.IsTouchingLayers(LayerMask.GetMask("Platform")))
         {
             return; //to prevent turning/moving in the air
-        }
+        }*/
 
         myRigidbody.linearVelocity = new Vector2(moveInput.x * runSpeed, myRigidbody.linearVelocity.y);
     }
