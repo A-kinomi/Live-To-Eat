@@ -17,6 +17,10 @@ public class BodySizeChange : MonoBehaviour
     [SerializeField] float lCatRunSpeed = 6f;
     [SerializeField] float lCatJumpSpeed = 13f;
 
+    public bool isSsize;
+    public bool isMsize;
+    public bool isLsize;
+
     void Start()
     {
         energyBarScript = energuBar.GetComponent<EnergyBar>();
@@ -47,6 +51,9 @@ public class BodySizeChange : MonoBehaviour
 
     void S_CatActive()
     {
+        isSsize = true;
+        isMsize = false;
+        isLsize = false;
         s_Cat.SetActive(true);
         m_Cat.SetActive(false);
         l_Cat.SetActive(false);
@@ -56,6 +63,9 @@ public class BodySizeChange : MonoBehaviour
 
     void M_CatActive()
     {
+        isSsize = false;
+        isMsize = true;
+        isLsize = false;
         s_Cat.SetActive(false);
         m_Cat.SetActive(true);
         l_Cat.SetActive(false);
@@ -65,6 +75,9 @@ public class BodySizeChange : MonoBehaviour
 
     void L_CatActive()
     {
+        isSsize = false;
+        isMsize = false;
+        isLsize = true;
         s_Cat.SetActive(false);
         m_Cat.SetActive(false);
         l_Cat.SetActive(true);

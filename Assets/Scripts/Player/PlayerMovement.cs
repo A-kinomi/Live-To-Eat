@@ -46,12 +46,6 @@ public class PlayerMovement : MonoBehaviour
         {
             return; //player doesn't move while drawing in.
         }
-
-        /*if (!myCollider.IsTouchingLayers(LayerMask.GetMask("Platform")))
-        {
-            return; //to prevent turning/moving in the air
-        }*/
-
         myRigidbody.linearVelocity = new Vector2(moveInput.x * runSpeed, myRigidbody.linearVelocity.y);
     }
 
@@ -70,8 +64,8 @@ public class PlayerMovement : MonoBehaviour
 
     void FlipSprit()
     {
-        bool hasHolizontalSpeed = Mathf.Abs(myRigidbody.linearVelocity.x) > Mathf.Epsilon;
-
+        //bool hasHolizontalSpeed = Mathf.Abs(myRigidbody.linearVelocity.x) > Mathf.Epsilon;
+        bool hasHolizontalSpeed = Mathf.Abs(myRigidbody.linearVelocity.x) > 0.5;
         if (hasHolizontalSpeed)
         {
             transform.localScale = new Vector2(Mathf.Sign(myRigidbody.linearVelocity.x), 1f);

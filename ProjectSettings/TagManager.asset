@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Foods
   - CatMouth
+  - L_Cat
   layers:
   - Default
   - TransparentFX
@@ -14,8 +15,8 @@ TagManager:
   - Water
   - UI
   - Food
-  - 
-  - 
+  - Player
+  - Background
   - 
   - 
   - 
