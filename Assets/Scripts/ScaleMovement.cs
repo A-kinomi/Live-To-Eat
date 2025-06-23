@@ -9,7 +9,7 @@ public class ScaleMovement : MonoBehaviour
     int randomNumber;
     [SerializeField] float moveDistance = 3f;
 
-    float time;
+    [SerializeField] float time;
     float interval = 3f;
    
     void Start()

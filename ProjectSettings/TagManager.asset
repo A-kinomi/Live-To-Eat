@@ -6,7 +6,7 @@ TagManager:
   tags:
   - Foods
   - CatMouth
-  - L_Cat
+  - Enemy
   layers:
   - Default
   - TransparentFX
