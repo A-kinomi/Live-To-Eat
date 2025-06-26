@@ -352,6 +352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  foodSpeed: 2
   isEaten: 0
 --- !u!114 &8838302054747359881
 MonoBehaviour:

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -19,12 +20,18 @@ public class PlayerMovement : MonoBehaviour
     bool isMoving = false;
     [SerializeField] float calConsume = 0.005f;
 
+    [SerializeField] GameObject attackArea_M;
+    [SerializeField] GameObject attackArea_L;
+    public bool isAttackingEnemy = false;
+    BodySizeChange bodySizeChangeScript;
+
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
         myCollider = GetComponent<BoxCollider2D>();
         drawInScript = GetComponentInChildren<DrawIn>();
         energyBarscript = energyBar.GetComponent<EnergyBar>();
+        bodySizeChangeScript = GetComponent<BodySizeChange>();
     }
 
     void Update()
@@ -89,13 +96,41 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void OnDrawIn(InputValue value)
+    void OnDrawIn(InputValue value) //E
     {
         isDrawingIn = true;
     }
 
-    void OnDrawInStop (InputValue value)
+    void OnDrawInStop (InputValue value) //E
     {
         isDrawingIn = false;
+    }
+
+    void OnAttack() //Press Enter or left click
+    {
+        if (bodySizeChangeScript.isSsize)
+        {
+            return;
+        }
+        if(bodySizeChangeScript.isMsize)
+        {
+            attackArea_M.SetActive(true);
+            isAttackingEnemy = true;
+            StartCoroutine(AttackEnemyDuration());
+        }
+        if(bodySizeChangeScript.isLsize)
+        {
+            attackArea_L.SetActive(true);
+            isAttackingEnemy = true;
+            StartCoroutine(AttackEnemyDuration()); 
+        }
+    }
+
+    IEnumerator AttackEnemyDuration()
+    {
+        yield return new WaitForSeconds(0.5f);
+        isAttackingEnemy = false;
+        attackArea_M.SetActive(false);
+        attackArea_L.SetActive(false);
     }
 }
