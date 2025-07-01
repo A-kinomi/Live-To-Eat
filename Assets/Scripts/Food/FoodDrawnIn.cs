@@ -32,8 +32,8 @@ public class FoodDrawnIn : MonoBehaviour
         {
             if (playerMovementScript.isDrawingIn && drawInScript.isFoodNearBy)
             {
-                FoodApproachesPlayer();
                 isEaten = true;
+                FoodApproachesPlayer();
             }
             if (!playerMovementScript.isDrawingIn)
             {

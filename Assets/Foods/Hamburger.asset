@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodName: Hamburger
   calorie: 280
-  foodImage: {fileID: 0}
+  foodImage: {fileID: -1595998989223354662, guid: fa522c5f32a4745ffb815b0d332d8e67, type: 3}

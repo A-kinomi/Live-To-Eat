@@ -5,11 +5,12 @@ public class DrawIn : MonoBehaviour
 {
     public bool isFoodNearBy = false;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.tag == "Foods")
         {
             isFoodNearBy = true;
+            //print(isFoodNearBy);
         }
     }
 
@@ -18,6 +19,7 @@ public class DrawIn : MonoBehaviour
         if(collision.tag == "Foods")
         {
             isFoodNearBy = false;
+            //print(isFoodNearBy);
         }
     }
 }
