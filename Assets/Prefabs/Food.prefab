@@ -146,7 +146,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5657484138937340494}
   - component: {fileID: 406976729700706395}
-  - component: {fileID: 4044597039882971388}
+  - component: {fileID: 3959875358222747951}
   - component: {fileID: 3785159808039273020}
   - component: {fileID: 3937765502795570595}
   - component: {fileID: 8838302054747359881}
@@ -229,8 +229,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &4044597039882971388
-CircleCollider2D:
+--- !u!70 &3959875358222747951
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -263,8 +263,9 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0570755, y: 0.01627922}
-  m_Radius: 4.8319407
+  m_Offset: {x: -0.051546574, y: 0.05153848}
+  m_Size: {x: 6.325739, y: 2.2713192}
+  m_Direction: 1
 --- !u!50 &3785159808039273020
 Rigidbody2D:
   serializedVersion: 5
@@ -539,6 +540,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   energyBar: {fileID: 0}
+  foodPosition: {fileID: 0}
+  foodBackSpeed: 1
 --- !u!1 &8178843650718690059
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class DrawIn : MonoBehaviour
+public class DrawIn : MonoBehaviour //Player.DrawInArea
 {
     public bool isFoodNearBy = false;
 
@@ -10,7 +10,6 @@ public class DrawIn : MonoBehaviour
         if(collision.tag == "Foods")
         {
             isFoodNearBy = true;
-            //print(isFoodNearBy);
         }
     }
 
@@ -19,7 +18,6 @@ public class DrawIn : MonoBehaviour
         if(collision.tag == "Foods")
         {
             isFoodNearBy = false;
-            //print(isFoodNearBy);
         }
     }
 }
